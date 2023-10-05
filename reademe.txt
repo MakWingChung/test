@@ -1,0 +1,23 @@
+command Listen
+cd ywitter
+python -m venv myenv
+.\myenv\Scripts\activate
+
+pip install -r requirements.txt
+pip install django
+pip install mysqlclient
+
+admin account
+admin
+P@ssw0rd
+
+backup data command
+    python .\manage.py makemigrations
+    python .\manage.py migrate
+
+#隱藏文件#
+admin.py
+
+runserver
+
+python manage.py runserver

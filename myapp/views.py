@@ -279,7 +279,7 @@ def search(request):
 
 #webrtc
 
-def lobby(request):
+def lobby1(request):
     # Handle the view logic here
     return render(request, 'lobby.html')
 
@@ -292,6 +292,7 @@ def lobby(request):
 
 def room(request):
     return render(request, 'base/room.html')
+    
 
 
 def getToken(request):
@@ -324,7 +325,6 @@ def createMember(request):
 def getMember(request):
     uid = request.GET.get('UID')
     room_name = request.GET.get('room_name')
-
     member = RoomMember.objects.get(
         uid=uid,
         room_name=room_name,
@@ -342,3 +342,4 @@ def deleteMember(request):
     )
     member.delete()
     return JsonResponse('Member deleted', safe=False)
+    

@@ -2,10 +2,25 @@ command Listen
 cd ywitter
 python -m venv myenv
 .\myenv\Scripts\activate
+pip install mysqlclient
 
-pip install -r requirements.txt
+startwithC9
+python -m venv myenv
+source myenv/bin/activate
+sudo apt-get update
+sudo apt-get upgrade
 pip install django
 pip install mysqlclient
+pip install agora_token_builder
+python -m pip install Pillow
+
+try:
+sudo apt update
+sudo apt install v4l-utils
+
+pip install -r requirements.txt
+
+
 
 admin account
 admin
@@ -20,4 +35,7 @@ admin.py
 
 runserver
 
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8000
+
+
+python manage.py runsslserver --certificate example.crt --key example.key 0.0.0.0:8000

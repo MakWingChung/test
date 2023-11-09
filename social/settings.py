@@ -14,11 +14,10 @@ SECRET_KEY = 'django-insecure-0d&@&#$+iplcor#dzu50(oe3d#e$bakyoe@5!ydmteqk%&%w9l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -26,7 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'musker',
+    'myapp',
+    "sslserver",
 ]
 
 MIDDLEWARE = [
@@ -40,6 +40,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'social.urls'
+# add ssl
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = False
 
 TEMPLATES = [
     {
@@ -66,13 +71,14 @@ WSGI_APPLICATION = 'social.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'myblog',
+        'NAME': 'myapp',
         'USER': 'admin',
         'PASSWORD': 'password',
         'HOST': 'awsdj.czfcztwhwusq.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
+
 
 
 # Password validation
